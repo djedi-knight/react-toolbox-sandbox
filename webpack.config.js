@@ -34,16 +34,16 @@ module.exports = {
     ]
   },
   postcss: [autoprefixer],
-  // sassLoader: {
-  //   data: '@import "theme/_config.scss";',
-  //   includePaths: [path.resolve(__dirname, './src')]
-  // },
+  sassLoader: {
+    data: '@import "theme/_config.scss";',
+    includePaths: [path.resolve(__dirname, './src')]
+  },
   devServer: {
     contentBase: './dist',
     hot: true
   },
   plugins: [
-    new ExtractTextPlugin('react-toolbox.css', { allChunks: true }),
+    new ExtractTextPlugin('bundle.css', { allChunks: true }),
     new webpack.HotModuleReplacementPlugin()
   ]
 };
